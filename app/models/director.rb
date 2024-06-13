@@ -11,6 +11,9 @@
 #  updated_at :datetime         not null
 #
 class Director < ApplicationRecord
+  validates(:id, presence: true)
+  validates(:name, presence: true)
+  
   def filmography
     my_id = self.id
 

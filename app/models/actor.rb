@@ -11,6 +11,8 @@
 #  updated_at :datetime         not null
 #
 class Actor < ApplicationRecord
+  validates(:id, presence: true)
+  validates(:name, presence: true)
   def characters
     return Character.where({ :actor_id => self.id })
   end
